@@ -45,6 +45,7 @@ border-left: 2px solid gray;
 .title{
     text-align: center;
     font-weight: bolder;
+    padding:15px 0 15px 0;
 }
 
 .headers{
