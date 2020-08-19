@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
+    <script defer src="calculator.js"></script>
+    <title>Dietary/Diabetic Exchange Tutorial</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <p class="main-title">Dietary/Diabetic Exchange Tutorial</p>
+        </div>
+
+        <div class="row">
+            <p class="intro-blurb">
+                The Dietary/Diabetic Exchange food lists are the basis of a meal planning system designed by a committee
+                of the American Diabetes Association and the American Dietetic Association. The Exchange food lists
+                divide food into six different groups of foods that vary in their carbohydrate, protein, fat, and
+                calorie content. Each exchange list contains foods that are alike; each food choice on a list contains
+                about the same amount of carbohydrate, protein, fat, and calories as the other choices on that list.
+                This “exchange” system is therefore useful as a diet assessment and diet planning tool, and this is an
+                important skill for Registered Dietitian Nutritionist (RDN).
+            </p>
+<div class="col column-center">
+<a href="./Dietary Exchange list 241e.pdf" target="_blank">
+    <button class="btn btn-primary btn-lg PDF-button">Click to Download ADA Exchange PDF</button>
+
+</a>
+</div>
+
+        </div>
+
+        <div class="row">
+            <div id="ada-exchanges" class="col-4">
+                <div class="row title">
+                    <h4>ADA Exchanges</h4>
+
+                </div>
+                <div class="row headers">
+                    <div class="col-6">
+                        <p>Exchange Categories</p>
+                    </div>
+                    <div class="col-6">
+                        <p>Exchanges per meal</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label col-6">
+                        <p>1. Starch/Bread</p>
+                    </div>
+                    <div class="input col-6 label">
+                        <input type="text" name="starch-bread" id="starch-bread" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label col-6">
+                        <p>2. Meat</p>
+                    </div>
+                    <div class="reference-value col-6">
+                        <p>Sub-categories:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-label col-6">
+                        <p class="indented">Very Lean</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="very-lean" id="very-lean" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-label col-6">
+                        <p class="indented">Lean</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="lean" id="lean" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-label col-6">
+                        <p class="indented">Medium-Fat</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="medium-fat" id="medium-fat" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-label col-6">
+                        <p class="indented">High-Fat</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="high-fat" id="high-fat" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label col-6">
+                        <p>3. Vegetable</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="vegetable" id="vegetable" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label col-6">
+                        <p>4. Fruit</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="fruit" id="fruit" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label col-6">
+                        <p>5. Milk</p>
+                    </div>
+                    <div class="reference-value col-6">
+                        <p>Sub-categories:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-label col-6">
+                        <p class="indented">Skim</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="skim" id="skim" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-label col-6">
+                        <p class="indented">Low-Fat</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="low-fat" id="low-fat" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sub-label col-6">
+                        <p class="indented">Whole</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="whole" id="whole" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label col-6">
+                        <p>6. Fat</p>
+                    </div>
+                    <div class="input col-6">
+                        <input type="text" name="fat" id="fat" size="6" onchange="GetValues()">
+                    </div>
+                </div>
+            </div>
+            <div id="reference-values" class="col-4">
+                <div class="row title">
+                    <h4>Reference Values Per Exchange</h4>
+                </div>
+                <div class="row headers">
+                    <div class="col-4">
+                        <p>Carbohydrates (g)</p>
+                    </div>
+                    <div class="col-4">
+                        <p>Protein (g)</p>
+                    </div>
+                    <div class="col-4">
+                        <p>Fat (g)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-starch">15</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-starch">3</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-starch">0</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-meat">------------</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-meat">------------</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-meat">------------</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-very-lean">0</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-very-lean">7</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-very-lean">1</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-lean">0</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-lean">7</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-lean">3</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-medium-fat">0</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-medium-fat">7</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-medium-fat">5</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-high-fat">0</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-high-fat">7</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-high-fat">8</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-vegetable">5</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-vegetable">2</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-vegetable">0</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-fruit">15</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-fruit">0</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-fruit">0</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-meat">------------</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-meat">------------</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-meat">------------</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-skim">12</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-skim">8</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-skim">1</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-low-fat">12</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-low-fat">8</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-low-fat">5</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-whole">12</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-whole">8</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-whole">8</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 reference-value">
+                        <p id="carb-fat">0</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="protein-fat">0</p>
+                    </div>
+                    <div class="col-4 reference-value">
+                        <p id="fat-fat">5</p>
+                    </div>
+                </div>
+
+                <div class="row totals-row">
+                    <p class="totals">TOTALS:</p>
+                </div>
+            </div>
+            <div id="calculations" class="col-4">
+                <div class="row title">
+                    <h4>Calculations</h4>
+                </div>
+                <div class="row headers">
+                    <div class="col-4">
+                        <p>Carbohydrates (g)</p>
+                    </div>
+                    <div class="col-4">
+                        <p>Protein (g)</p>
+                    </div>
+                    <div class="col-4">
+                        <p>Fat (g)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-starch">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-starch">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-starch">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculation-carb-meat calculated-value">
+                            <p>------------</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculation-protein-meat calculated-value">
+                            <p>------------</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculation-fat-meat calculated-value">
+                            <p>------------</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-very-lean">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-very-lean">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-very-lean">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-lean">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-lean">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculation-fat-lean calculated-value">
+                            <p id="calculation-fat-lean">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-medium-fat">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-medium-fat">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-medium-fat">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-high-fat">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-high-fat">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-high-fat">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-vegetable">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-vegetable">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-vegetable">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-fruit">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-fruit">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-fruit">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculation-carb-milk calculated-value">
+                            <p>------------</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculation-protein-milk calculated-value">
+                            <p>------------</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculation-fat-milk calculated-value">
+                            <p>------------</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-skim">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-skim">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-skim">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-low-fat">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-low-fat">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-low-fat">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-whole">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-whole">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-whole">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-carb-fat">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-protein-fat">0</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="calculated-value">
+                            <p id="calculation-fat-fat">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row totals-row">
+                    <div class="col-4 calculated-value">
+                        <p id="total-carbs">0</p>
+                    </div>
+                    <div class="col-4 calculated-value">
+                        <p id="total-protein">0</p>
+                    </div>
+                    <div class="col-4 calculated-value">
+                        <p id="total-fat">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row title" id="group-calculation-box">
+            <div class="col-12 ">
+                <h4>Calories per Food Group</h4>
+            </div>
+        </div>
+        <div class="row headers-bottom">
+            <div class="col-3">
+                <p>Carbohydrate (kcal)</p>
+            </div>
+            <div class="col-3">
+                <p>Protein (kcal)</p>
+            </div>
+            <div class="col-3">
+                <p>Fat (kcal)</p>
+            </div>
+            <div class="col-3">
+                <p>Total (kcal)</p>
+            </div>
+        </div>
+        <div class="row total-row-bottom">
+            
+                <div class="col-3">
+                    <p id="carb-kcal" class="food-group-title">0</p>
+                </div>
+                <div class="col-3">
+                    <p id="protein-kcal" class="food-group-title">0</p>
+                </div>
+                <div class="col-3">
+                    <p id="fat-kcal" class="food-group-title">0</p>
+                </div>
+                <div class="col-3">
+                    <p id="total-kcal" class="food-group-title">0</p>
+                </div>
+        
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+#calculations{
+border-top: 2px solid gray;
+border-bottom: 2px solid gray;
+border-left: 1px solid gray;
+border-right: 2px solid gray;
+font-weight: bold;
+}
+
+#reference-values{
+border-top: 2px solid gray;
+border-bottom: 2px solid gray;
+border-right: 1px solid gray;
+border-left: 1px solid gray;
+font-weight: bold;
+
+}
+
+#group-calculation-box{
+    border-bottom: 2px solid gray;
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+}
+
+.column-center{
+    text-align: center;
+}
+
+.PDF-button{
+    margin-bottom:20px;
+}
+
+.reference-value{
+    text-align: center;
+   
+}
+
+#ada-exchanges{
+    border-top: 2px solid gray;
+border-bottom: 2px solid gray;
+border-right: 1px solid gray;
+border-left: 2px solid gray;
+
+}
+
+.title{
+    text-align: center;
+    font-weight: bolder;
+}
+
+.headers{
+    text-align: center;
+    font-weight: bold;
+    overflow: visible;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: lightgray;
+    padding: 15px 0px 0px 0px;
+    margin-bottom: 10px
+}
+
+.headers-bottom{
+    text-align: center;
+    font-weight: bold;
+    overflow: visible;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: lightgray;
+    padding: 15px 0px 0px 0px;
+    border-right:2px solid gray;
+    border-left: 2px solid gray;
+}
+
+.label{
+    text-align: left;
+    font-weight: bold;
+}
+
+.sub-label{
+    text-align: left;
+    font-weight: bold;
+}
+
+.input{
+    text-align: center;
+}
+
+.indented{
+    padding-left: 15px;
+}
+
+.calculated-value{
+    text-align: center;
+}
+
+.main-title{
+    text-align: center;
+    font-size:2em;
+    font-weight: bold;
+}
+
+.food-group-title{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.total-row-bottom{
+border: 2px solid gray;
+}
+
+.totals{
+    text-align: center;
+}
+
+.totals-row{
+    border-top:2px solid gray;
+    padding-top: 15px;
+}
