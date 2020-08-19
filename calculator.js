@@ -19,6 +19,9 @@ var proteinCalorieMultiplier = 4
 var fatCalorieMultiplier = 9
 var totalCalories 
 
+var carbPercent
+var proteinPercent
+var fatPercent
 
 
 //---------------------------------------------------------
@@ -247,13 +250,22 @@ function GetValues(){
     totalFat = StarchProtein + VeryLeanProtein + LeanProtein + MediumFatProtein + HighFatProtein + VegetableProtein + FruitProtein + SkimProtein + LowFatProtein + WholeProtein + FatProtein
     totalProtein = StarchFat + VeryLeanFat + LeanFat + MediumFatFat + HighFatFat + VegetableFat + FruitFat + SkimFat + LowFatFat + WholeFat + FatFat
 
+    
+    var totalKcal = (totalCarbs * carbCalorieMultiplier)+(totalProtein * proteinCalorieMultiplier)+(totalFat * fatCalorieMultiplier)
+    
+    carbPercent = ((totalCarbs * carbCalorieMultiplier) / totalKcal) * 100
+    proteinPercent = ((totalProtein * proteinCalorieMultiplier) / totalKcal) * 100
+    fatPercent = ((totalFat * fatCalorieMultiplier) / totalKcal) * 100
+
     document.getElementById('total-carbs').innerHTML = totalCarbs
     document.getElementById('total-protein').innerHTML = totalProtein
     document.getElementById('total-fat').innerHTML = totalFat
 
-    document.getElementById('carb-kcal').innerHTML = totalCarbs * carbCalorieMultiplier
-    document.getElementById('protein-kcal').innerHTML = totalProtein * proteinCalorieMultiplier
-    document.getElementById('fat-kcal').innerHTML = totalFat * fatCalorieMultiplier
-    document.getElementById('total-kcal').innerHTML = (totalCarbs * carbCalorieMultiplier)+(totalProtein * proteinCalorieMultiplier)+(totalFat * fatCalorieMultiplier)
+    
+
+    document.getElementById('carb-kcal').innerHTML = (totalCarbs * carbCalorieMultiplier) + " kcal / " + carbPercent.toFixed(1) + "% of total"
+    document.getElementById('protein-kcal').innerHTML = (totalProtein * proteinCalorieMultiplier) + " kcal / " + proteinPercent.toFixed(1) + "% of total"
+    document.getElementById('fat-kcal').innerHTML = (totalFat * fatCalorieMultiplier)  + " kcal / " + fatPercent.toFixed(1) + "% of total"
+    document.getElementById('total-kcal').innerHTML = totalKcal + " kcal"
 
 }
