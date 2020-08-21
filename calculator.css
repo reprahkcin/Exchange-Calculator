@@ -1,3 +1,7 @@
+.input-field{
+    text-align: center;
+}
+
 #calculations{
 border-top: 2px solid gray;
 border-bottom: 2px solid gray;
@@ -12,7 +16,6 @@ border-bottom: 2px solid gray;
 border-right: 1px solid gray;
 border-left: 1px solid gray;
 font-weight: bold;
-
 }
 
 #group-calculation-box{

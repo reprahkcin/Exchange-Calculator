@@ -1,14 +1,17 @@
 var numStarch
+var numSweets
 var numVeryLean
 var numLean 
 var numMediumFat
 var numHighFat
+var numPlantBased
 var numVegetable
 var numFruit
 var numSkim
 var numLowFat
 var numWhole
 var numFat
+var numAlcohol
 
 var totalCarbs
 var totalProtein
@@ -24,11 +27,15 @@ var proteinPercent
 var fatPercent
 
 
-//---------------------------------------------------------
+//Reference Values---------------------------------------
 
 var cStarch = 15
 var pStarch = 3
 var fStarch = 0
+
+var cSweets = 15
+var pSweets = 0   
+var fSweets = 0
 
 var cVeryLean = 0
 var pVeryLean = 7
@@ -45,6 +52,10 @@ var fMediumFat = 5
 var cHighFat = 0
 var pHighFat = 7
 var fHighFat = 8
+
+var cPlantBased = 0
+var pPlantBased = 7
+var fPlantBased = 0
 
 var cVegetable = 5
 var pVegetable = 2
@@ -70,6 +81,10 @@ var cFat = 0
 var pFat = 0
 var fFat = 5
 
+var cAlcohol = 0
+var pAlcohol = 0
+var fAlcohol = 0
+
 //--------------------------------------------------------------
 
 var cStarchElement = document.getElementById('carb-starch')
@@ -78,6 +93,13 @@ var pStarchElement = document.getElementById('protein-starch')
     pStarchElement.innerHTML = pStarch
 var fStarchElement = document.getElementById('fat-starch')
     fStarchElement.innerHTML = fStarch
+
+var cSweetsElement = document.getElementById('carb-sweets')
+    cSweetsElement.innerHTML = cSweets
+var pSweetsElement = document.getElementById('protein-sweets-input')
+    pSweetsElement.value = pSweets
+var fSweetsElement = document.getElementById('fat-sweets-input')
+    fSweetsElement.value = fSweets
 
 var cVeryLeanElement = document.getElementById('carb-very-lean')
     cVeryLeanElement.innerHTML = cVeryLean 
@@ -106,6 +128,13 @@ var pHighFatElement = document.getElementById('protein-high-fat')
     pHighFatElement.innerHTML = pHighFat
 var fHighFatElement = document.getElementById('fat-high-fat')
     fHighFatElement.innerHTML = fHighFat
+
+var cPlantBasedElement = document.getElementById('carb-plant-based-input')
+    cPlantBasedElement.value = cPlantBased 
+var pPlantBasedElement = document.getElementById('protein-plant-based')
+    pPlantBasedElement.innerHTML = pPlantBased
+var fPlantBasedElement = document.getElementById('fat-plant-based-input')
+    fPlantBasedElement.value = fPlantBased
 
 var cVegetableElement = document.getElementById('carb-vegetable')
     cVegetableElement.innerHTML = cVegetable 
@@ -149,14 +178,16 @@ var pFatElement = document.getElementById('protein-fat')
 var fFatElement = document.getElementById('fat-fat')
     fFatElement.innerHTML = fFat
 
+var cAlcoholElement = document.getElementById('carb-alcohol-input')
+    cAlcoholElement.value = cAlcohol 
+var pAlcoholElement = document.getElementById('protein-alcohol')
+    pAlcoholElement.innerHTML = pAlcohol
+var fAlcoholElement = document.getElementById('fat-alcohol-input')
+    fAlcoholElement.value = fAlcohol
+
 //------------------------------------------------------------
 
 function GetValues(){
-
-
-
-
-
 
     numStarch = document.getElementById('starch-bread').value
     var StarchCarbs = numStarch * cStarch
@@ -165,6 +196,15 @@ function GetValues(){
     document.getElementById('calculation-protein-starch').innerHTML = StarchProtein
     var StarchFat = numStarch * fStarch
     document.getElementById('calculation-fat-starch').innerHTML = StarchFat
+
+    numSweets = document.getElementById('sweets').value
+    var SweetsCarbs = numSweets * cSweets
+    document.getElementById('calculation-carb-sweets').innerHTML = SweetsCarbs
+    var SweetsProtein = numSweets * pSweetsElement.value
+    document.getElementById('calculation-protein-sweets').innerHTML = SweetsProtein
+    var SweetsFat = numSweets * fSweetsElement.value
+    document.getElementById('calculation-fat-sweets').innerHTML = SweetsFat
+
 
     numVeryLean = document.getElementById('very-lean').value
     var VeryLeanCarbs = numVeryLean * cVeryLean
@@ -197,6 +237,14 @@ function GetValues(){
     document.getElementById('calculation-protein-high-fat').innerHTML = HighFatProtein
     var HighFatFat = numHighFat * fHighFat
     document.getElementById('calculation-fat-high-fat').innerHTML = HighFatFat
+
+    numPlantBased = document.getElementById('plant-based').value
+    var PlantBasedCarbs = numPlantBased * cPlantBasedElement.value
+    document.getElementById('calculation-carb-plant-based').innerHTML = PlantBasedCarbs
+    var PlantBasedProtein = numPlantBased * pPlantBased
+    document.getElementById('calculation-protein-plant-based').innerHTML = PlantBasedProtein
+    var PlantBasedFat = numPlantBased * fPlantBasedElement.value
+    document.getElementById('calculation-fat-plant-based').innerHTML = PlantBasedFat
 
     numVegetable = document.getElementById('vegetable').value
     var VegetableCarbs = numVegetable * cVegetable
@@ -246,9 +294,17 @@ function GetValues(){
     var FatFat = numFat * fFat
     document.getElementById('calculation-fat-fat').innerHTML = FatFat
 
-    totalCarbs = StarchCarbs + VeryLeanCarbs + LeanCarbs + MediumFatCarbs + HighFatCarbs + VegetableCarbs + FruitCarbs + SkimCarbs + LowFatCarbs + WholeCarbs + FatCarbs
-    totalFat = StarchProtein + VeryLeanProtein + LeanProtein + MediumFatProtein + HighFatProtein + VegetableProtein + FruitProtein + SkimProtein + LowFatProtein + WholeProtein + FatProtein
-    totalProtein = StarchFat + VeryLeanFat + LeanFat + MediumFatFat + HighFatFat + VegetableFat + FruitFat + SkimFat + LowFatFat + WholeFat + FatFat
+    numAlcohol = document.getElementById('alcohol').value
+    var AlcoholCarbs = numAlcohol * cAlcoholElement.value
+    document.getElementById('calculation-carb-alcohol').innerHTML = AlcoholCarbs
+    var AlcoholProtein = numAlcohol * pAlcohol
+    document.getElementById('calculation-protein-alcohol').innerHTML = AlcoholProtein
+    var AlcoholFat = numAlcohol * fAlcoholElement.value
+    document.getElementById('calculation-fat-alcohol').innerHTML = AlcoholFat
+
+    totalCarbs = StarchCarbs + SweetsCarbs + VeryLeanCarbs + LeanCarbs + MediumFatCarbs + HighFatCarbs + PlantBasedCarbs + VegetableCarbs + FruitCarbs + SkimCarbs + LowFatCarbs + WholeCarbs + FatCarbs + AlcoholCarbs
+    totalProtein = StarchProtein + SweetsProtein + VeryLeanProtein + LeanProtein + MediumFatProtein + HighFatProtein + PlantBasedProtein + VegetableProtein + FruitProtein + SkimProtein + LowFatProtein + WholeProtein + FatProtein + AlcoholProtein
+    totalFat = StarchFat + SweetsFat + VeryLeanFat + LeanFat + MediumFatFat + HighFatFat + PlantBasedFat + VegetableFat + FruitFat + SkimFat + LowFatFat + WholeFat + FatFat + AlcoholFat
 
     
     var totalKcal = (totalCarbs * carbCalorieMultiplier)+(totalProtein * proteinCalorieMultiplier)+(totalFat * fatCalorieMultiplier)
