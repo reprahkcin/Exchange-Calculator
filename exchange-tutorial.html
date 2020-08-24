@@ -23,13 +23,7 @@
 
         <div class="row">
             <p class="intro-blurb">
-                The Dietary/Diabetic Exchange food lists are the basis of a meal planning system designed by a committee
-                of the American Diabetes Association and the American Dietetic Association. The Exchange food lists
-                divide food into six different groups of foods that vary in their carbohydrate, protein, fat, and
-                calorie content. Each exchange list contains foods that are alike; each food choice on a list contains
-                about the same amount of carbohydrate, protein, fat, and calories as the other choices on that list.
-                This “exchange” system is therefore useful as a diet assessment and diet planning tool, and this is an
-                important skill for Registered Dietitian Nutritionist (RDN).
+                The Dietary/Diabetic Exchange food lists are the basis of a meal planning system designed by the American Diabetes Association and the American Dietetic Association. The Exchange food lists divide food into six different groups that vary in their carbohydrate, protein, fat, and calorie content.  Each exchange list contains foods that are similar; each food choice on a list contains about the same amount of carbohydrate, protein, fat, and calories as the other choices on that list. These divisions do not include considerations of foods micronutrient content.  This “exchange” system is therefore useful as a diet assessment and diet planning tool and is an important skill for Registered Dietitian Nutritionist (RDN).
             </p>
             <div class="col column-center">
                 <a href="./Dietary Exchange list 241e.pdf" target="_blank">
@@ -189,6 +183,14 @@
                     <div class="input col-6">
                         <input class="input-field" type="text" name="alcohol" id="alcohol" size="6"
                             onchange="GetValues()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label col-6">
+                        <p></p>
+                    </div>
+                    <div class="input col-6">
+                        <button class="btn btn-primary" type="button" value="Reload Page" onClick="document.location.reload(true)">Reset Values</button>
                     </div>
                 </div>
             </div>
@@ -704,7 +706,7 @@
         </div>
         <div class="row title" id="group-calculation-box">
             <div class="col-12 ">
-                <h4>Calories Per Food Group</h4>
+                <h4>Calories and Percent per Macronutrient</h4>
             </div>
         </div>
         <div class="row headers-bottom">
